@@ -1,0 +1,32 @@
+<div class="container" style="width: 320px">
+  <div class="card mt-4 w-12" appHover>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <p class="p-2 font-weight-bold">{{pokemon.hp}} HP</p>
+      <p class="p-2 font-weight-bold">{{pokemon.cp}} CP</p>
+    </div>
+    <img class="card-img-top " [src]="pokemon.picture" alt="Card image cap">
+
+    <div class="card-body">
+      <h4 class="card-title">{{pokemon.name | uppercase}}</h4>
+
+      <div class="card-text">
+        {{ pokemon.created | date:"dd/MM/yyyy" }}
+      </div>
+
+      <p class="font-weight-bold"> Types :
+        <span *ngFor="let type of pokemon.types" class="{{type}}">
+                            {{type}}
+      </span>
+      </p>
+
+      <br>
+
+      <div class="mt-2">
+        <a routerLink="" class="btn btn-info">Retour</a>
+      </div>
+    </div>
+
+  </div>
+
+</div>

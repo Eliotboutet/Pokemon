@@ -1,0 +1,12 @@
+<h1 class="center">Pokémons</h1>
+<div class="container">
+  <div class="row">
+    <input type="text" class="form-control mb-4" placeholder="Search" [(ngModel)]="pokemonService.searchPoke" id="listSearch">
+  </div>
+
+  <div class="row">
+    <div *ngFor="let pokemon of pokemonService.pokemons | filter : pokemonService.searchPoke">
+      <app-pokemon [pokemon]="pokemon"></app-pokemon>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="card mt-4 mx-4" (click)="pokemonService.logPokemon(pokemon)" appHover>
+  <img class="card-img-top" [src]="pokemon.picture" alt="Card image cap">
+
+  <div class="card-body">
+    <h4 class="card-title">{{pokemon.name | uppercase}}</h4>
+
+    <div class="card-text">
+      {{ pokemon.created | date:"dd/MM/yyyy" }}
+    </div>
+
+    <span *ngFor="let type of pokemon.types" class="{{type}}">
+                        {{type}}
+          </span>
+    <br>
+
+    <div class="mt-2">
+      <button class="btn btn-danger mr-2" (click)="pokemonService.deletePokemon(pokemon.id)">
+        Supprimer
+      </button>
+      <a routerLink="/pokemon/{{pokemon.id}}" class="btn btn-info">Détails</a>
+    </div>
+  </div>
+
+</div>
